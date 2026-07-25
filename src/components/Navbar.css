@@ -1,0 +1,222 @@
+/* Navbar.css */
+:root {
+  --primary-color: #2a2a72;
+  --secondary-color: #009ffd;
+  --text-color: #f7f7f7;
+  --hover-effect: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 6rem;
+  background: linear-gradient(
+    135deg,
+    rgba(42, 42, 114, 0.95) 0%,
+    rgba(0, 159, 253, 0.95) 100%
+  );
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: var(--hover-effect);
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #fff 0%, #00ff88 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: var(--hover-effect);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  list-style: none;
+}
+
+.nav-menu li {
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-menu li img {
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 4px;
+  transition: var(--hover-effect);
+}
+
+.nav-menu .anchor-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  position: relative;
+  transition: var(--hover-effect);
+  font-size: 1.1rem;
+}
+
+.nav-menu .anchor-link p {
+  transition: transform 0.3s ease;
+}
+
+.nav-menu .anchor-link:hover p {
+  transform: translateY(-3px);
+  color: #00ff88;
+}
+
+.connect .anchor-link {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--hover-effect);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.connect .anchor-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 159, 253, 0.4);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  transition: var(--hover-effect);
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
+  z-index: 1001;
+}
+
+.menu-toggle:hover {
+  transform: rotate(90deg);
+}
+
+.nav-mob-close {
+  display: none;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: var(--hover-effect);
+}
+
+.nav-mob-close:hover {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
+  .nav-menu {
+    position: fixed;
+    right: -350px;
+    top: 0;
+    width: 350px;
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 6rem 2rem;
+    background: rgba(42, 42, 114, 0.98);
+    backdrop-filter: blur(15px);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-menu li {
+    width: 100%;
+    padding: 1rem 0;
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideRight 0.4s forwards;
+  }
+
+  @keyframes slideRight {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .nav-menu .anchor-link p {
+    font-size: 1.4rem;
+  }
+
+  .menu-toggle,
+  .nav-mob-close {
+    display: block;
+  }
+
+  .connect {
+    display: none;
+  }
+
+  .nav-mob-close {
+    display: block;
+  }
+}
+
+/* Hover animations */
+.nav-menu li:hover::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,33 @@
+/* Resume.css */
+.resume-page { width: 100%; min-height: 100vh; background: #f4f5f7; padding: 60px 20px; box-sizing: border-box; }
+.resume-container { max-width: 850px; margin: 0 auto; background: #fff; padding: 50px 55px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+.resume-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; }
+.resume-container h1 { margin: 0; font-size: 2rem; letter-spacing: 1px; color: #1a2a3a; }
+.resume-title { margin: 4px 0 0; font-size: 1.05rem; color: #555; }
+.resume-download-btn { background: #1a2a3a; color: #fff; padding: 10px 22px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; white-space: nowrap; transition: background 0.3s ease; height: fit-content; }
+.resume-download-btn:hover { background: #33475b; }
+.resume-contact { margin: 14px 0 20px; font-size: 0.85rem; color: #555; }
+.resume-contact a { color: #1a2a3a; text-decoration: none; font-weight: 600; }
+.resume-contact a:hover { text-decoration: underline; }
+.resume-container hr { border: none; border-top: 2px solid #1a2a3a; margin: 0 0 20px; }
+.resume-container section { margin-bottom: 22px; }
+.resume-container h2 { font-size: 1rem; letter-spacing: 0.5px; color: #1a2a3a; text-transform: uppercase; border-bottom: 1px solid #1a2a3a; padding-bottom: 6px; margin-bottom: 12px; }
+.resume-container p { font-size: 0.92rem; line-height: 1.55; color: #333; margin: 0; }
+.resume-container ul { margin: 6px 0 0; padding-left: 20px; }
+.resume-container li { font-size: 0.92rem; line-height: 1.55; color: #333; margin-bottom: 4px; }
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.skill-box { background: #eef1f4; border-radius: 6px; padding: 12px 14px; }
+.skill-box h3 { margin: 0 0 4px; font-size: 0.85rem; color: #1a2a3a; }
+.skill-box p { font-size: 0.85rem; color: #444; }
+.resume-entry { margin-bottom: 16px; }
+.resume-entry:last-child { margin-bottom: 0; }
+.entry-header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px; }
+.entry-title { font-weight: 700; font-size: 0.95rem; color: #1a2a3a; }
+.entry-org { font-size: 0.9rem; color: #666; }
+.entry-dates { margin-left: auto; font-size: 0.85rem; color: #888; font-style: italic; }
+
+@media (max-width: 600px) {
+  .resume-container { padding: 30px 22px; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .entry-dates { margin-left: 0; }
+}

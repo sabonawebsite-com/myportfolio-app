@@ -1,0 +1,259 @@
+/* Hero.css */
+:root {
+    --hero-primary: #0a192f;
+    --hero-accent: #64ffda;
+    --hero-text: #ccd6f6;
+    --hero-hover: rgba(100, 255, 218, 0.1);
+    --hero-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  
+  .hero {
+    min-height: 100vh;
+    padding: 10rem 6rem;
+    background: radial-gradient(circle at center, 
+      rgba(10, 25, 47, 0.95) 0%, 
+      rgba(26, 26, 72, 0.95) 100%),
+      url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.005" numOctaves="3"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.4"/></svg>');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+  }
+  a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+  }
+  
+  .proimg {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid transparent;
+    background: linear-gradient(45deg, #64ffda, #8a2be2) border-box;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 50px rgba(100, 255, 218, 0.2);
+    animation: float 6s ease-in-out infinite;
+    transition: var(--hero-transition);
+  }
+  .qrcode{
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+    object-fit: cover;
+    border: 4px solid transparent;
+    background: linear-gradient(45deg, #64ffda, #8a2be2) border-box;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 50px rgba(100, 255, 218, 0.2);
+    animation: float 6s ease-in-out infinite;
+    transition: var(--hero-transition);
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .proimg:hover {
+    transform: scale(1.05) rotate(5deg);
+    box-shadow: 0 0 70px rgba(100, 255, 218, 0.4);
+  }
+  
+  .hero h1 {
+    font-size: 4rem;
+    text-align: center;
+    margin: 1rem 0;
+    color: var(--hero-text);
+    position: relative;
+    line-height: 1.2;
+  }
+  
+  .hero h1 span:first-child {
+    background: linear-gradient(45deg, #fff 0%, #64ffda 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: block;
+    text-shadow: 0 0 25px rgba(100, 255, 218, 0.3);
+    animation: slideIn 1s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  .hero h1 span:last-child {
+    background: linear-gradient(45deg, #64ffda, #8a2be2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    display: inline-block;
+    padding: 0 1rem;
+  }
+  
+  .hero h1 span:last-child::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(45deg, #64ffda, #8a2be2);
+    animation: lineGrow 1s ease-out;
+  }
+  
+  @keyframes lineGrow {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    color: #8892b0;
+    text-align: center;
+    margin: 1rem 0 2rem;
+    max-width: 600px;
+    position: relative;
+    animation: fadeIn 1.5s ease-out;
+  }
+  
+  .hero-action {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    animation: slideUp 1s ease-out;
+  }
+  
+  .hero-connect {
+    background: linear-gradient(45deg, #64ffda, #8a2be2);
+    padding: 1.2rem 2.5rem;
+    border-radius: 5px;
+    color: var(--hero-primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--hero-transition);
+    position: relative;
+    overflow: hidden;
+    border: none;
+  }
+  
+  .hero-connect::after {
+    content: '→';
+    position: absolute;
+    right: -20px;
+    transition: var(--hero-transition);
+  }
+  
+  .hero-connect:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 25px rgba(100, 255, 218, 0.4);
+    padding-right: 3.5rem;
+  }
+  
+  .hero-connect:hover::after {
+    right: 20px;
+    animation: arrowBounce 0.6s infinite;
+  }
+  
+  @keyframes arrowBounce {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+  }
+  
+  .hero-resume {
+    padding: 1.2rem 2.5rem;
+    border: 2px solid #64ffda;
+    border-radius: 5px;
+    color: #64ffda;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--hero-transition);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-resume::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(100, 255, 218, 0.1),
+      transparent
+    );
+    transition: var(--hero-transition);
+  }
+  
+  .hero-resume:hover::before {
+    left: 100%;
+  }
+  
+  .hero-resume:hover {
+    background: rgba(100, 255, 218, 0.05);
+    transform: translateY(-3px);
+  }
+  
+  @media (max-width: 1024px) {
+    .hero {
+      padding: 8rem 3rem;
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+    }
+    
+    .proimg {
+      width: 220px;
+      height: 220px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      padding: 6rem 2rem;
+    }
+    
+    .hero h1 {
+      font-size: 2.2rem;
+    }
+    
+    .hero-action {
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 300px;
+    }
+    
+    .hero-connect,
+    .hero-resume {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  /* Particle Animation */
+  @keyframes particle {
+    0% { transform: translateY(0) translateX(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-100vh) translateX(100vw); opacity: 0; }
+  }
+  
+  .hero::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="1" fill="%2364ffda"/></svg>');
+    animation: particle 20s linear infinite;
+    pointer-events: none;
+    opacity: 0.1;
+  }

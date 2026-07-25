@@ -1,0 +1,196 @@
+/* About.css */
+
+:root {
+  --bg-color: #0f172a;
+  --card-color: #1e293b;
+  --text-color: #ffffff;
+  --text-secondary: #cbd5e1;
+  --accent-color: #ff6b00;
+  --transition: 0.3s ease;
+}
+
+.about {
+  padding: 100px 10%;
+  background: var(--bg-color);
+}
+
+.about-title {
+  position: relative;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.about-title h1 {
+  color: var(--text-color);
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.myImage {
+  position: absolute;
+  width: 180px;
+  opacity: 0.15;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.aboutleft {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.aboutleft img {
+  width: 350px;
+  max-width: 100%;
+  border-radius: 20px;
+  border: 4px solid var(--accent-color);
+  box-shadow: 0 10px 30px rgba(255, 107, 0, 0.3);
+  transition: var(--transition);
+}
+
+.aboutleft img:hover {
+  transform: scale(1.03);
+}
+
+.about-right {
+  flex: 2;
+}
+
+.about-para p {
+  color: var(--text-secondary);
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.about-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.about-skill {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-skill p {
+  width: 150px;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.about-skill hr {
+  flex: 1;
+  height: 10px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #ff6b00, #ffd166);
+}
+
+.about-skill:hover {
+  transform: translateX(8px);
+  transition: var(--transition);
+}
+
+.about-acheviements {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 80px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.about-acheviment {
+  text-align: center;
+}
+
+.about-acheviment h1 {
+  font-size: 48px;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.about-acheviment p {
+  color: var(--text-secondary);
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.about-acheviements hr {
+  width: 2px;
+  height: 70px;
+  background: #334155;
+  border: none;
+}
+
+/* ==========================
+   Responsive Design
+========================== */
+
+@media (max-width: 992px) {
+  .about {
+    padding: 80px 6%;
+  }
+
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-skill {
+    justify-content: center;
+  }
+
+  .about-skill p {
+    width: 120px;
+  }
+
+  .about-acheviements hr {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 5%;
+  }
+
+  .about-title h1 {
+    font-size: 36px;
+  }
+
+  .aboutleft img {
+    width: 280px;
+  }
+
+  .about-para p {
+    font-size: 16px;
+  }
+
+  .about-skill p {
+    font-size: 14px;
+    width: 110px;
+  }
+
+  .about-acheviment h1 {
+    font-size: 36px;
+  }
+
+  .about-acheviment p {
+    font-size: 14px;
+  }
+}
